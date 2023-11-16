@@ -22,7 +22,7 @@ from torch_geometric.utils import degree
 np.random.seed(0) #Configuración para generar número aleatorios
 #Parámetros de visualización
 plt.rcParams['figure.dpi'] = 300
-plt.rcParams.update({'font.size': 24})
+plt.rcParams.update({'font.size': 14})
 
 # Importamos el dataset
 dataset = Planetoid(root=".", name="CiteSeer")
@@ -42,9 +42,9 @@ degrees = degree(data.edge_index[0]).numpy()
 numbers = Counter(degrees)
 
 #Mostramos todo
-fig, ax = plt.subplots(figsize=(18, 6))
-ax.set_xlabel('Node degree')
-ax.set_ylabel('Number of nodes')
+fig, ax = plt.subplots(figsize=(6, 6))
+ax.set_xlabel('Node degree', fontsize = 14)
+ax.set_ylabel('Number of nodes', fontsize = 14)
 plt.bar(numbers.keys(),
         numbers.values(),
         color='#0A047A')
@@ -187,8 +187,8 @@ sizes.append(len(mask))
 
 # Gráfico de barras
 fig, ax = plt.subplots(figsize=(9, 9))
-ax.set_xlabel('Node degree')
-ax.set_ylabel('Accuracy score')
+ax.set_xlabel('Node degree', fontsize=14)
+ax.set_ylabel('Accuracy score', fontsize = 14)
 ax.set_facecolor('#EFEEEA')
 plt.bar(['0','1','2','3','4','5','>5'],
         accuracies,
