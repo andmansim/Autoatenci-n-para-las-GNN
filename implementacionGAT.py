@@ -152,7 +152,7 @@ plt.scatter(tsne[:, 0], tsne[:, 1], s=50, c=data.y)
 plt.show()
 
 # Obtener vectores característicos
-h, _ = GAT(data.x, data.edge_index)
+h, _ = untrained_gat(data.x, data.edge_index)
 
 # Entrenar TSNE
 tsne = TSNE(n_components=2, learning_rate='auto',
@@ -165,7 +165,7 @@ plt.scatter(tsne[:, 0], tsne[:, 1], s=50, c=data.y)
 plt.show()
 
 # Análisis de precisión
-_, out = GAT(data.x, data.edge_index)
+_, out = accuracy(data.x, data.edge_index)
 
 # Calculamos el grado de cada nodo
 degrees = degree(data.edge_index[0]).numpy()
