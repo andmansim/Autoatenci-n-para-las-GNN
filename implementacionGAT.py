@@ -171,7 +171,7 @@ tsne = TSNE(n_components=2, learning_rate='auto',
 plt.figure(figsize=(10, 10))
 plt.axis('off')
 plt.scatter(tsne[:, 0], tsne[:, 1], s=50, c=data.y)
-plt.show()
+
 
 # Análisis de precisión
 _, out = untrained_gat(data.x, data.edge_index)
@@ -208,3 +208,4 @@ for i in range(0, 7):
     for i in range(0, 7):
         plt.text(i, accuracies[i]//2, sizes[i],
                 ha='center', color='white')
+plt.show()
