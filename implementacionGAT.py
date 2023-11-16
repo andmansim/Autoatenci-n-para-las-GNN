@@ -122,9 +122,18 @@ def test(model, data):
   acc = accuracy(out.argmax(dim=1)[data.test_mask], data.y[data.test_mask])
   return acc
 
-'''start_time=time.time()
+start_time=time.time()
 end_time=time.time()
-print(f'Elapsed time: {end_time - start_time:.2f} seconds')'''
+print(f'Elapsed time: {end_time - start_time:.2f} seconds')
+
+#Crear modelo GAT
+gat = GAT(dataset.num_features, 8, dataset.num_classes)
+print(gat)
+# Entrenamos y testeamos el modelo
+train(gat, data)
+acc = test(gat, data)
+print(f'\nGAT test accuracy: {acc*100:.2f}%\n')
+
 
 # Creamos el modelo GCN
 gcn = GCN(dataset.num_features, 16, dataset.num_classes)
