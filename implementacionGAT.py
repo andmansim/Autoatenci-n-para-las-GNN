@@ -165,7 +165,7 @@ plt.scatter(tsne[:, 0], tsne[:, 1], s=50, c=data.y)
 plt.show()
 
 # Análisis de precisión
-_, out = accuracy(data.x, data.edge_index)
+_, out = untrained_gat(data.x, data.edge_index)
 
 # Calculamos el grado de cada nodo
 degrees = degree(data.edge_index[0]).numpy()
