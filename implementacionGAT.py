@@ -186,7 +186,7 @@ accuracies.append(accuracy(out.argmax(dim=1)[mask], data.y[mask]))
 sizes.append(len(mask))
 
 # Gráfico de barras
-fig, ax = plt.subplots(figsize=(18, 9))
+fig, ax = plt.subplots(figsize=(9, 9))
 ax.set_xlabel('Node degree')
 ax.set_ylabel('Accuracy score')
 ax.set_facecolor('#EFEEEA')
