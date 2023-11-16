@@ -121,9 +121,11 @@ def test(model, data):
   _, out = model(data.x, data.edge_index)
   acc = accuracy(out.argmax(dim=1)[data.test_mask], data.y[data.test_mask])
   return acc
-start_time=time.time()
+
+'''start_time=time.time()
 end_time=time.time()
-print(f'Elapsed time: {end_time - start_time:.2f} seconds')
+print(f'Elapsed time: {end_time - start_time:.2f} seconds')'''
+
 # Creamos el modelo GCN
 gcn = GCN(dataset.num_features, 16, dataset.num_classes)
 print(gcn)
